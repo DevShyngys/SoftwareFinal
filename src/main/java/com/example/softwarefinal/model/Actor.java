@@ -21,4 +21,10 @@ public class Actor {
 
     @ManyToMany(mappedBy = "actors")
     private List<Movie> movies;
+
+    public Actor(Long id, String name, int age) {
+        this.id = id;
+        this.name = name;
+        this.age = age;
+    }
 }
