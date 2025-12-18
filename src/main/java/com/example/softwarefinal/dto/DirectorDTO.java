@@ -14,4 +14,10 @@ public class DirectorDTO {
     private String name;
     private int age;
     private List<MovieDTO> movies;
+
+    public DirectorDTO(Long id, String name, int age) {
+        this.id = id;
+        this.name = name;
+        this.age = age;
+    }
 }
