@@ -5,6 +5,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @Entity
 @Data
 @Table(name = "actors")
@@ -17,4 +19,6 @@ public class Actor {
     private String name;
     private int age;
 
+    @ManyToMany(mappedBy = "actors")
+    private List<Movie> movies;
 }
