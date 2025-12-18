@@ -5,6 +5,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @Entity
 @Data
 @Table(name = "directors")
@@ -16,4 +18,7 @@ public class Director {
     private Long id;
     private String name;
     private int age;
+
+    @OneToMany(mappedBy = "director", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Movie> movies;
 }
