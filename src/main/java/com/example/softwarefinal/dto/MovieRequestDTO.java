@@ -7,12 +7,11 @@ import lombok.NoArgsConstructor;
 import java.util.List;
 
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
-public class MovieDTO {
-    private Long id;
+@AllArgsConstructor
+public class MovieRequestDTO {
     private String title;
     private Double rating;
-    private DirectorDTO director;
-    private List<ActorDTO> actors;
+    private Long directorId;
+    private List<Long> actorIds;
 }

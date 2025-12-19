@@ -58,7 +58,7 @@ public class DirectorServiceTest {
     @Test
     @Transactional
     void createTest() {
-        DirectorDTO input = new DirectorDTO(null, "NewDirector", 40, null);
+        DirectorDTO input = new DirectorDTO(null, "NewDirector", 40);
 
         DirectorDTO created = directorService.create(input);
 
@@ -73,7 +73,7 @@ public class DirectorServiceTest {
     void updateTest() {
         Director saved = directorRepository.save(new Director(null, "OldDirector", 50, null));
 
-        DirectorDTO updateDTO = new DirectorDTO(saved.getId(), "UpdatedDirector", 55, null);
+        DirectorDTO updateDTO = new DirectorDTO(saved.getId(), "UpdatedDirector", 55);
 
         DirectorDTO updated = directorService.update(saved.getId(), updateDTO);
 

@@ -58,7 +58,7 @@ public class ActorServiceTest {
     @Test
     @Transactional
     void createTest() {
-        ActorDTO input = new ActorDTO(null, "NewActor", 25, null);
+        ActorDTO input = new ActorDTO(null, "NewActor", 25);
 
         ActorDTO created = actorService.create(input);
 
@@ -73,7 +73,7 @@ public class ActorServiceTest {
     void updateTest() {
         Actor saved = actorRepository.save(new Actor(null, "OldActor", 50, null));
 
-        ActorDTO updateDTO = new ActorDTO(saved.getId(), "UpdatedActor", 55, null);
+        ActorDTO updateDTO = new ActorDTO(saved.getId(), "UpdatedActor", 55);
 
         ActorDTO updated = actorService.update(saved.getId(), updateDTO);
 
