@@ -1,5 +1,6 @@
 package com.example.softwarefinal.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -20,6 +21,7 @@ public class Actor {
     private int age;
 
     @ManyToMany(mappedBy = "actors")
+    @JsonBackReference
     private List<Movie> movies;
 
     public Actor(Long id, String name, int age) {
